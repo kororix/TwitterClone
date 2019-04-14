@@ -8,8 +8,12 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
-    redirect_to new_tweet_path
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+      redirect_to new_tweet_path, notice: 'つぶやきを投稿しました！'
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -19,6 +23,6 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params
-    params.require(:tweet)
+    params.require(:tweet).permit(:content)
   end
 end
