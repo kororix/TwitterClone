@@ -4,13 +4,13 @@
 
 <table>
   <tr>
-    <th>内容</th>
+    <th>つぶやき</th>
   </tr>
 
 <% @tweets.each do |tweet| %>
   <tr>
     <td><%= tweet.content %></td>
-    <td><%= link_to '詳細を確認する', tweet_path(tweet.id) %></td>
+    <td><%= link_to 'つぶやきの詳細を確認する', tweet_path(tweet.id) %></td>
     <td><%= link_to 'つぶやきを編集する', edit_tweet_path(tweet.id) %></td>
     <td><%= link_to 'つぶやきを削除する', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
