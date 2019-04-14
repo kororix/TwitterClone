@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   def index
+    @tweets = Tweet.all
   end
 
   def new
@@ -11,9 +12,13 @@ class TweetsController < ApplicationController
     redirect_to new_tweet_path
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])
+  end
+
   private
 
   def tweet_params
-    params.require(:tweet).permit(:content)
+    params.require(:tweet)
   end
 end
