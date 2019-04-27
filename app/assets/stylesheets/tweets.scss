@@ -1,3 +1,64 @@
-// Place all the styles related to the tweets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ul {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+}
+
+h1 {
+  color: #22008D;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h2 {
+  color: #22008D;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 0px;
+}
+
+h3 {
+  color: #22008D;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.header {
+  background-color: #3BBDFF;
+  height: 80px;
+  font-size: 1.5rem;
+  display: block;
+}
+
+.footer {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  background-color: #3BBDFF;
+  display: table;
+  text-align: center;
+}
+
+.footer p {
+  color: #fff;
+  padding: 20px;
+}
+
+th {
+  color: #22008D;
+}

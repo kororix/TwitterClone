@@ -1,4 +1,4 @@
-<h1>つぶやき一覧</h1>
+<h3>つぶやき一覧</h3>
 
 <p><%= notice %></p>
 
@@ -10,12 +10,28 @@
 <% @tweets.each do |tweet| %>
   <tr>
     <td><%= tweet.content %></td>
-    <td><%= link_to 'つぶやきの詳細を確認する', tweet_path(tweet.id) %></td>
-    <td><%= link_to 'つぶやきを編集する', edit_tweet_path(tweet.id) %></td>
-    <td><%= link_to 'つぶやきを削除する', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+    <td>
+      <%= form_with(model: @tweet, url: tweet_path(tweet.id), local: true, method: 'get') do |form| %>
+        <%= form.submit '詳細' %>
+      <% end %>
+    </td>
+    <td>
+      <%= form_with(model: @tweet, url: edit_tweet_path(tweet.id), local: true, method: 'get') do |form| %>
+        <%= form.submit '編集' %>
+      <% end %>
+    </td>
+    <td>
+      <%= form_with(model: @tweet, url: tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, local: true, method: 'get') do |form| %>
+        <%= form.submit '削除' %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to '新しいつぶやきを投稿する', new_tweet_path %>
-<%= link_to 'TOPにもどる', top_tweets_path %>
+<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
+  <%= form.submit '新規投稿' %>
+<% end %>
+<%= form_with(model: @tweet, url: top_tweets_path, local: true, method: 'get') do |form| %>
+  <%= form.submit 'TOP' %>
+<% end %>
