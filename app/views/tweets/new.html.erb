@@ -1,3 +1,12 @@
+<div class = "container">
+  <header class = "header">
+    <ul class = "top_menu clearfix">
+      <li><a href="/tweets/top">TOP</a></li>
+      <li><a href="/tweets">つぶやき一覧</a></li>
+      <li><a href="/tweets/new">新規つぶやき</a></li>
+    </ul>
+  </header>
+  
 <h3>つぶやきを投稿する</h3>
 
 <%= render 'form' %>
@@ -7,3 +16,8 @@
 <%= form_with(model: @tweet, url: top_tweets_path, local: true, method: 'get') do |form| %>
   <%= form.submit 'TOP' %>
 <% end %>
+
+<footer class = "footer">
+  <p>test application for Pharb</p>
+</footer>
+</div>
