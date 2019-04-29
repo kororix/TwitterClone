@@ -1,6 +1,11 @@
+/*TOPページ*/
 div.topic li {
   padding: 1% 1%;
   background-color: #fff;
+}
+
+img {
+  padding: 10% 10%;
 }
 
 .row {
@@ -24,4 +29,34 @@ ul.row_C li {
   color: #294986;
   background-color: #fff;
   border-bottom: dotted 0px
+}
+
+/*つぶやき一覧ページ*/
+a.index_top {
+  color: #294986;
+  font-size: 20px;
+  font-style: italic;
+}
+
+p.notice {
+  color: red;
+}
+
+th {
+  text-align: center;
+  padding: 0px 10px;
+}
+
+td.tweet_contents {
+  text-align: left;
+  border-bottom: dotted 1px
+}
+
+table td {
+  padding: 0px 10px;
+}
+
+table {
+  margin: 100px auto;
+
 }

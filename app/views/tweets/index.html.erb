@@ -1,9 +1,8 @@
 <div class = "container">
 
+<a class="index_top">つぶやき一覧</a>
 
-<h3>つぶやき一覧</h3>
-
-<p><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <table>
   <tr>
@@ -12,34 +11,27 @@
 
 <% @tweets.each do |tweet| %>
   <tr>
-    <td><%= tweet.content %></td>
-    <td>
+    <td class="tweet_contents"><%= tweet.content %></td>
+    <td class="btn_show">
       <%= form_with(model: @tweet, url: tweet_path(tweet.id), local: true, method: 'get') do |form| %>
-        <%= form.submit '詳細' %>
+        <%= link_to '詳細', tweet_path(tweet.id), class: 'btn btn-info' %>
       <% end %>
     </td>
-    <td>
+    <td class="btn_edit">
       <%= form_with(model: @tweet, url: edit_tweet_path(tweet.id), local: true, method: 'get') do |form| %>
-        <%= form.submit '編集' %>
+        <%= link_to '編集', edit_tweet_path(tweet.id), class: 'btn btn-warning' %>
       <% end %>
     </td>
-    <td>
-      <%= form_with(model: @tweet, url: tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, local: true, method: 'get') do |form| %>
-        <%= form.submit '削除' %>
+    <td class="btn_destroy">
+      <%= form_with(model: @tweet, local: true, method: 'get') do |form| %>
+        <%= link_to '削除', tweet_path(tweet.id), method: :delete, data: { confirm: '本当に削除していいですか？' }, class: 'btn btn-danger' %>
       <% end %>
     </td>
   </tr>
 <% end %>
 </table>
 
-<%= form_with(model: @tweet, url: new_tweet_path, local: true, method: 'get') do |form| %>
-  <%= form.submit '新規投稿' %>
+<%= form_with(model: @tweet, local: true, method: 'get') do |form| %>
+  <%= link_to '新規投稿', new_tweet_path, class: 'btn btn-success' %>
+  <%= link_to 'TOPにもどる', top_tweets_path, class: 'btn btn-default' %>
 <% end %>
-<%= form_with(model: @tweet, url: top_tweets_path, local: true, method: 'get') do |form| %>
-  <%= form.submit 'TOP' %>
-<% end %>
-
-<footer class = "footer">
-  <p>test application for Pharb</p>
-</footer>
-</div>
