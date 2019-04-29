@@ -31,13 +31,14 @@ ul.row_C li {
   border-bottom: dotted 0px
 }
 
-/*つぶやき一覧ページ*/
-a.index_top {
+/*全体*/
+a.contents_top {
   color: #294986;
   font-size: 20px;
   font-style: italic;
 }
 
+/*つぶやき一覧ページ*/
 p.notice {
   color: red;
 }
@@ -58,5 +59,11 @@ table td {
 
 table {
   margin: 100px auto;
+}
 
+/*詳細ページ*/
+p.show {
+  font-size: 20px;
+  text-decoration-line: underline;
+  margin: 100px auto;
 }

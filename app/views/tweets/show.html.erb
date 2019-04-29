@@ -1,17 +1,10 @@
 <div class = "container">
 
+<a class="contents_top">つぶやき詳細画面</a>
 
+<p class="show">つぶやき: <%= @tweet.content %></p>
 
-<h3>つぶやき詳細画面</h3>
-<p>つぶやき: <%= @tweet.content %></p>
-<%= form_with(model: @tweet, url: tweets_path, local: true, method: 'get') do |form| %>
-  <%= form.submit '一覧' %>
+<%= form_with(model: @tweet, local: true, method: 'get') do |form| %>
+  <%= link_to 'つぶやき一覧', tweets_path, class: 'btn btn-primary' %>
+  <%= link_to 'TOPにもどる', top_tweets_path, class: 'btn btn-default' %>
 <% end %>
-<%= form_with(model: @tweet, url: top_tweets_path, local: true, method: 'get') do |form| %>
-  <%= form.submit 'TOP' %>
-<% end %>
-
-  <footer class = "footer">
-    <p>test application for Pharb</p>
-  </footer>
-</div>
