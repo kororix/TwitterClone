@@ -1,17 +1,16 @@
 <div class = "container">
 
 
-<h3>つぶやきを投稿する</h3>
+<a class="contents_top">つぶやきを編集する</a>
 
+<div class="show_edit">
 <%= render 'form' %>
-<%= form_with(model: @tweet, url: tweets_path, local: true, method: 'get') do |form| %>
-  <%= form.submit '一覧' %>
-<% end %>
-<%= form_with(model: @tweet, url: top_tweets_path, local: true, method: 'get') do |form| %>
-  <%= form.submit 'TOP' %>
+</div>
+
+<%= form_with(model: @tweet, local: true, method: 'get') do |form| %>
+  <%= link_to 'つぶやき一覧', tweets_path, class: 'btn btn-primary' %>
+  <%= link_to 'TOPにもどる', top_tweets_path, class: 'btn btn-default' %>
 <% end %>
 
-<footer class = "footer">
-  <p>test application for Pharb</p>
-</footer>
+
 </div>

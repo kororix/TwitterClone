@@ -67,3 +67,13 @@ p.show {
   text-decoration-line: underline;
   margin: 100px auto;
 }
+
+/*編集ページ*/
+div.show_edit {
+  margin: 100px auto;
+}
+
+/*新規投稿ページ*/
+li.notice {
+  color: red;
+}
