@@ -77,3 +77,10 @@ div.show_edit {
 li.notice {
   color: red;
 }
+
+/*投稿前確認ページ*/
+p.confirm {
+  font-size: 20px;
+  text-decoration-line: underline;
+  margin: 100px auto;
+}
