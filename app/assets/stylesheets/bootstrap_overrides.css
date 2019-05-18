@@ -21,7 +21,7 @@ ul.row_A li {
 }
 
 @media only screen and (min-width: 1200px) {
-  li.col-xs-6 br {
+  li.col-sm-6 br {
     display: none;
   }
 }
